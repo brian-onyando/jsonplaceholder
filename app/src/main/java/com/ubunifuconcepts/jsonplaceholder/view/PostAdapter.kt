@@ -7,7 +7,9 @@ import com.ubunifuconcepts.jsonplaceholder.R
 import com.ubunifuconcepts.jsonplaceholder.model.Post
 import com.ubunifuconcepts.jsonplaceholder.view.viewholder.PostViewHolder
 
-class PostAdapter(private val posts: List<Post>) : RecyclerView.Adapter<PostViewHolder>() {
+class PostAdapter : RecyclerView.Adapter<PostViewHolder>() {
+    private var posts = listOf<Post>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(
@@ -24,5 +26,10 @@ class PostAdapter(private val posts: List<Post>) : RecyclerView.Adapter<PostView
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.setData(posts[position])
+    }
+
+    fun setData(posts: List<Post>) {
+        this.posts = posts
+        notifyDataSetChanged()
     }
 }
