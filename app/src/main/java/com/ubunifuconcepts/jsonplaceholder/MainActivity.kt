@@ -8,5 +8,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initialize()
+    }
+
+    private fun initialize() {
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        TODO("Not yet implemented")
     }
 }

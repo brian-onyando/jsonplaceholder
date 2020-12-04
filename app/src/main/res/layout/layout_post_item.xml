@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserIdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_user_id"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserIdValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@+id/tvUserIdLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserIdLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvUserIdLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPostIdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_post_id"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserIdLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvUserIdLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPostIdValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="14"
+        app:layout_constraintTop_toTopOf="@+id/tvPostIdLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPostIdLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvUserIdValue"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPostTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Post Title"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostIdLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvPostIdLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPostBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam"
+        android:layout_marginTop="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvPostTitle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
