@@ -2,4 +2,6 @@
     <string name="app_name">Json Placeholder</string>
     <string name="label_user_id">User Id:</string>
     <string name="label_post_id">Id:</string>
+    <string name="data_not_loaded">Could not load data! :(</string>
+    <string name="refresh">Refresh</string>
 </resources>
