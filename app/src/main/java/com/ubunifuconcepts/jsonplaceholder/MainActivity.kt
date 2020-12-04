@@ -1,7 +1,9 @@
 package com.ubunifuconcepts.jsonplaceholder
 
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var postAdapter: PostAdapter
     lateinit var postsRecyclerView: RecyclerView
     lateinit var postsViewModel: PostsViewModel
+    private val loadingVisual: AlertDialog by lazy {
+        AlertDialog.Builder(this)
+            .setMessage(getString(R.string.fetching_posts))
+            .setCancelable(false)
+            .create()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +36,18 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerView()
         observePosts()
         fetchPostData()
+        registerRefreshButtonListener()
+    }
+
+    private fun registerRefreshButtonListener() {
+        val btnRefresh = findViewById<AppCompatButton>(R.id.btnRefresh)
+        btnRefresh.setOnClickListener {
+            fetchPostData()
+        }
     }
 
     private fun fetchPostData() {
+        showLoadingSpinner()
         postsViewModel.fetchPosts()
     }
 
@@ -50,6 +67,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     showDataNotLoadedMessage()
                 }
+                hideLoadingSpinner()
             })
     }
 
@@ -65,5 +83,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun updatePostsList(posts: List<Post>) {
         postAdapter.setData(posts)
+    }
+
+    private fun showLoadingSpinner() {
+        loadingVisual.show()
+    }
+
+    private fun hideLoadingSpinner() {
+        loadingVisual.hide()
     }
 }

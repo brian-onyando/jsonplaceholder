@@ -4,4 +4,5 @@
     <string name="label_post_id">Id:</string>
     <string name="data_not_loaded">Could not load data! :(</string>
     <string name="refresh">Refresh</string>
+    <string name="fetching_posts">Fetching posts...</string>
 </resources>
