@@ -2,7 +2,7 @@ package com.ubunifuconcepts.jsonplaceholder.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Item(
+data class Post(
 
 	@field:SerializedName("id")
 	val id: Int,
