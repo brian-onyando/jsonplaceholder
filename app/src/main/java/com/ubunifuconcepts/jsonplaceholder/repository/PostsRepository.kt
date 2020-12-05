@@ -5,7 +5,7 @@ import com.ubunifuconcepts.common.network.RestClient
 import com.ubunifuconcepts.jsonplaceholder.model.Post
 import com.ubunifuconcepts.jsonplaceholder.service.NetworkService
 
-object ItemRepository {
+object PostsRepository {
     suspend fun loadPosts(): List<Post> {
         return try {
             RestClient.service(NetworkService::class.java).fetchPosts()
@@ -13,5 +13,11 @@ object ItemRepository {
             Log.e(javaClass.simpleName, "Error fetching posts: ${e.message}")
             listOf()
         }
+    }
+
+    fun testData(): List<Post> {
+        return listOf(
+            Post(1, "Title", "Body", 2)
+        )
     }
 }

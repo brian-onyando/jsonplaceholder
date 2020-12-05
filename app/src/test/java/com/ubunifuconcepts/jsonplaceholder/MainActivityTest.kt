@@ -3,7 +3,7 @@ package com.ubunifuconcepts.jsonplaceholder
 import androidx.test.core.app.launchActivity
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.ubunifuconcepts.jsonplaceholder.model.Post
-import com.ubunifuconcepts.jsonplaceholder.repository.ItemRepository
+import com.ubunifuconcepts.jsonplaceholder.repository.PostsRepository
 import io.mockk.coEvery
 import io.mockk.mockkObject
 import io.mockk.unmockkObject
@@ -22,8 +22,8 @@ class MainActivityTest {
 
     @Before
     fun setUp() {
-        mockkObject(ItemRepository)
-        coEvery { ItemRepository.loadPosts() } returns data
+        mockkObject(PostsRepository)
+        coEvery { PostsRepository.loadPosts() } returns data
     }
 
     @Test
@@ -47,6 +47,6 @@ class MainActivityTest {
 
     @After
     fun tearDown() {
-        unmockkObject(ItemRepository)
+        unmockkObject(PostsRepository)
     }
 }
