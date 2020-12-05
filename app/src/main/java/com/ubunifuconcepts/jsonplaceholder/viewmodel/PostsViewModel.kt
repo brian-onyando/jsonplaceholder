@@ -23,17 +23,4 @@ class PostsViewModel : ViewModel() {
             }
         }
     }
-
-
-    fun testPosts() {
-        viewModelScope.launch(IO) {
-            Log.d(javaClass.simpleName, "Fetching posts data")
-            val posts = PostsRepository.testData()
-            withContext(Main) {
-                postsLiveData.value = posts
-            }
-        }
-
-    }
-
 }

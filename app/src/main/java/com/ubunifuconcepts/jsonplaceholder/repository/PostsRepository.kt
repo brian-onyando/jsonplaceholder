@@ -14,10 +14,4 @@ object PostsRepository {
             listOf()
         }
     }
-
-    fun testData(): List<Post> {
-        return listOf(
-            Post(1, "Title", "Body", 2)
-        )
-    }
 }
