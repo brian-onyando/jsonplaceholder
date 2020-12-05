@@ -12,7 +12,6 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,6 +27,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
     }
 }
 
@@ -52,7 +58,18 @@ dependencies {
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    //android core testing
+    testImplementation "androidx.test:core-ktx:$core_testing_version"
+    testImplementation "androidx.test:runner:$core_testing_version"
+
+    //mockk
+    testImplementation "io.mockk:mockk:$mockk_version"
+
+    //robolectric
+    testImplementation "org.robolectric:robolectric:$robolectric_version"
+
+    testImplementation 'junit:junit:4.13.1'
+
+    testImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

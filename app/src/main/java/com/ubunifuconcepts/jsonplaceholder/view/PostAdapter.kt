@@ -8,7 +8,7 @@ import com.ubunifuconcepts.jsonplaceholder.model.Post
 import com.ubunifuconcepts.jsonplaceholder.view.viewholder.PostViewHolder
 
 class PostAdapter : RecyclerView.Adapter<PostViewHolder>() {
-    private var posts = listOf<Post>()
+    internal var posts = listOf<Post>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val view = LayoutInflater.from(parent.context)
